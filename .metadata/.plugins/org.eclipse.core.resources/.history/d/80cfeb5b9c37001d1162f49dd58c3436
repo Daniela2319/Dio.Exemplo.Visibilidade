@@ -1,0 +1,8 @@
+package com.mastersoft.clinica.service;
+
+import com.mastersoft.clinica.model.Exames;
+
+public class ExameService {
+	void salvarExame(Exames exame) {
+
+}

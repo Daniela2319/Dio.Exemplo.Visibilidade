@@ -1,0 +1,35 @@
+package Lanchonete;
+
+import Lanchonete.Area.Cliente.Cliente;
+import Lanchonete.Atendimento.Cozinha.cozinheiro;
+
+public class Estabelecimento {
+public static void main (String[] args) {
+	
+	cozinheiro cozinheiro = new cozinheiro();
+	cozinheiro.adicionarSucoNoBalcao();
+	cozinheiro.adicionarLancheNoBalcao();
+	cozinheiro.adicionarComboNoBalcao();
+	
+	Almoxerife almoxerife = new Almoxerife();
+	// ações que não precisam estarem disponíveis para todos
+	almoxerife.controlarEntrada();
+	almoxerife.controlarSaida();
+	// ação que somente o seu pacote de cozinha precisa conhecer.
+	almoxerife.entregarIngrediente();
+	
+	Atendente atendente = new Atendente();
+	atendente.pegarLancheCozinha();
+	atendente.receberPagamento();
+	atendente.servindoMesa();
+	
+	Cliente cliente = new Cliente();
+	cliente.escolherLanche();
+	cliente.fazerPedido();
+	cliente.pagarConta();
+	
+	//esta ação é privada
+	cliente.consultarSaldoAplicativo();
+	
+}
+}
